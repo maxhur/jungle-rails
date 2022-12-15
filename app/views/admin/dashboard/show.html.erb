@@ -1,2 +1,11 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<main>
+<br>
+<h1>Admin Dashboard</h1>
+
+<p>There are total <strong><%= @countProducts.sum %></strong> products are in <a class="link-success" href='admin/products' >database</a></p>
+<p>There are total <strong><%= @countCategories.length %></strong> categories are in database<p>
+</main>
