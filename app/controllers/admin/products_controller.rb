@@ -10,6 +10,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
+    puts `THIS IS PRODUCT PARAMS #{product_params}`
     @product = Product.new(product_params)
 
     if @product.save
