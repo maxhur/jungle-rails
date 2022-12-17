@@ -34,20 +34,27 @@
             <%# Categories %>
           <%# </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown"> %>
+             <li class="nav-item" >
+              <%= link_to 'About', '/about' , class: "nav-link" %>
+            </li>
             <% Category.all.each do |category| %>
             <li class="nav-item">
               <%= link_to category.name, category, class: "nav-link" %>
             </li>
             <% end %>
-
-            <li class="nav-item" >
-              <a href="/about" class="nav-link">About<a>
-            </li>
-
           <%# </ul>
         </li> %>
       </ul>
       <ul class="navbar-nav">
+
+        <div class="nav-link">
+        <% if current_user %>
+          Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout', class: "nav-match"%>
+        <% else %>
+        <%= link_to 'Login', '/login', class: "nav-match"  %> | <%= link_to 'Signup', '/signup', class: "nav-match" %>
+        <% end %>
+        </div>
+
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-danger"
