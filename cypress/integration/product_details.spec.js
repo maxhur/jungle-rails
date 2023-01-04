@@ -1,4 +1,4 @@
-describe("home app", () => {
+describe("E2E Testing", () => {
   beforeEach(() => {
     // Cypress starts out with a blank slate for each test
     // so we must tell it to visit our website with the `cy.visit()` command.
@@ -13,12 +13,8 @@ describe("home app", () => {
     cy.contains("The Jungle")
   });
 
-  it("There is products on the page", () => {
-    cy.get(".products article").should("be.visible");
+  it("Click Scented Blade product and go to the page", () => {
+    cy.get('[alt="Scented Blade"]').click();
+    cy.contains('The Scented Blade is an extremely rare')
   });
-  
-  it("There are 12 products on the page", () => {
-    cy.get(".products article").should("have.length", 12);
-  });
-  
 });
